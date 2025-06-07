@@ -19,7 +19,7 @@ Por ahora este ecosistema está contenido en Docker y se compone de dos partes:
 1. **Base de datos** PostgreSQL/PostGIS (`cont-postgis`)
 2. **Aplicación backend** (`cont-serloc-back`)
 
-Ambos servicios comparten la misma red de Docker (`database_network`), por lo que pueden comunicarse entre sí por el nombre del contenedor, no por `localhost`.
+Ambos servicios comparten la misma red de Docker (`database_network`), por lo que pueden comunicarse entre sí por el nombre del contenedor.
 
 ---
 
