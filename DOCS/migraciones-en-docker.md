@@ -8,7 +8,7 @@ Este documento explica de forma sencilla cómo ejecutar **migraciones** en una a
 
 Primero, **Sequelize** es un Object-Relational Mapper (ORM) para **Node.js** que simplifica la interacción con bases de datos relacionales. Permite a los desarrolladores trabajar con bases de datos SQL usando JavaScript,
 
-Una **migración** es una forma de mantener sincronizada la estructura de tu base de datos con el código de tu aplicación. Por ejemplo, si agregas una tabla o una nueva columna en tu modelo de Sequelize, necesitas que esos cambios también existan en la base de datos real. O, en casos como el de este proyecto en el que ya existe la base de datos, y solo necesitas trabajar con sus datos, puedes crear los modelos en tu backend y **Sequelize** conectará los campos de una entidad con los de otra (estos campos deben coincidir en los respectivos Schema y tabla de un lado y otro). Las migraciones automatizan ese proceso.
+Una **migración** es una forma de mantener sincronizada la estructura de tu base de datos con el código de tu aplicación. Por ejemplo, si agregas una tabla o una nueva columna en tu modelo de Sequelize, necesitas que esos cambios también existan en la base de datos real. O, en casos como el de este proyecto en el que ya existe la base de datos, y solo necesitas trabajar con sus datos, puedes crear los modelos en tu backend y **Sequelize** comparará y validará los campos de una entidad con los de otra (estos campos deben coincidir en los respectivos Schema y tabla de un lado y otro). Las migraciones automatizan ese proceso.
 
 ---
 
