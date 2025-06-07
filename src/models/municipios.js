@@ -1,0 +1,45 @@
+'use strict'
+
+const { Model, Sequelize } = require('sequelize');
+
+module.exports = (sequelize, DataTypes) => {
+    class Municipios extends Model {
+        static associate(models) {
+            //Asociación cons estados 
+            Municipios.belongsTo(models.Estados, {
+                foreignKey: 'ID_ENT',
+                targetKey: 'ID_ENT',
+            });
+            
+            // Aquí pueden agregarse más asociaciones 
+        }
+    }
+
+    Municipios.init({
+        ID_MUN: {
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          allowNull: false,
+        },
+        CVEGEO: {
+          type: DataTypes.STRING(3),
+          allowNull: true,
+        },
+        NOMGEO: {
+          type: DataTypes.STRING(80),
+          allowNull: true,
+        },
+        ID_ENT: {
+          type: DataTypes.INTEGER,
+          allowNull: true, // Se puede ajustar si la integridad referencial lo requiere
+        },
+      }, {
+        sequelize,
+        modelName: 'Municipios',
+        schema: 'edo_mun',
+        tableName: 'municipios',
+        timestamps: false,
+      });
+    
+      return Municipios;
+}

@@ -3,23 +3,19 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-require('dotenv').config();  // Carga variables del .env
+const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-
-// Ruta adaptada a config.js
-const config = require(path.resolve(__dirname, '../config/config.js'))[env];
-
+const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
-if (config.url) {
-  sequelize = new Sequelize(config.url, config);
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-// Carga dinámica de modelos
 fs
   .readdirSync(__dirname)
   .filter(file => {
@@ -35,7 +31,6 @@ fs
     db[model.name] = model;
   });
 
-  // Asociaciones entre modelos
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
