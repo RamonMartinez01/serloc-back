@@ -8,10 +8,17 @@ class Localidades extends Model {
 
         // aquí se definirán las asociasiones
 
+        //Asociación con Municipios
         Localidades.belongsTo(models.Municipios, {
             foreignKey: 'ID_MUN',
             targetKey: 'ID_MUN',
           });
+
+        //Asociación con Des_local_2020
+        Localidades.hasMany(models.Des_local_2020, {
+            foreignKey: 'ID_LOC',
+            sourceKey: 'ID_LOC',
+        })
     }
 }
 
