@@ -29,6 +29,12 @@ module.exports = (sequelize, DataTypes) => {
               sourceKey: 'ID_MUN'
             });
 
+             //Asociación cons Na
+             Municipios.hasMany(models.Na, {
+              foreignKey: 'ID_MUN',
+              sourceKey: 'ID_MUN'
+            });
+
             // Aquí pueden agregarse más asociaciones 
         }
     }

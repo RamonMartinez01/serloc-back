@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             // Asociaciones
 
-            //Asociación con Localidades
+            //Asociación con Municipios
             loc_rur_mpio_2020.belongsTo(models.Municipios, {
                 foreignKey: 'ID_MUN',
                 targetKey: 'ID_MUN'
