@@ -24,6 +24,12 @@ class Localidades extends Model {
         Localidades.hasMany(models.Loc_rur_2010, {
             foreignKey: 'ID_LOC',
             sourceKey: 'ID_LOC',
+        });
+
+         //Asociación con Loc_rur_2020
+         Localidades.hasMany(models.Loc_rur_2020, {
+            foreignKey: 'ID_LOC',
+            sourceKey: 'ID_LOC',
         })
 
     }
