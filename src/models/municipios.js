@@ -10,6 +10,12 @@ module.exports = (sequelize, DataTypes) => {
                 foreignKey: 'ID_ENT',
                 targetKey: 'ID_ENT',
             });
+
+            //Asociación cons localidades
+            Municipios.hasMany(models.Localidades, {
+                foreignKey: 'ID_MUN',
+                sourceKey: 'ID_MUN'
+              });
             
             // Aquí pueden agregarse más asociaciones 
         }
