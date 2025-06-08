@@ -14,139 +14,139 @@ module.exports = {
           primaryKey: true
          },
          CGLOC: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          VUL_0101: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          VUL_0102: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          FCB_0101: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FCB_0102: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          FCB_0103: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FCB_0104: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FCB_0105: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FCB_0106: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FCB_0107: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPI_0101: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPI_0102: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          FPI_0103: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPI_0104: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPI_0105: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FRE_0101: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FRE_0102: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          FRE_0103:{
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FRE_0104: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FRE_0105: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FRE_0106:{
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPT_0101: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPT_0102: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          FPT_0103: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPT_0104: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPT_0105: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPT_0106: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPP_0101: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPP_0102: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          FPP_0103: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPP_0104: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPP_0105: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FAN_0101: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FAN_0102: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          FAN_0103: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FAN_0104: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FAD_0101: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FAD_0102: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          FAD_0103: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FAD_0104: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPE_0101: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPE_0102: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
          },
          FPE_0103: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          FPE_0104: {
-          type: DataTypes.DOUBLE,
+          type: Sequelize.DOUBLE,
          },
          POBTOT: {
-          type: DataTypes.INTEGER,
+          type: Sequelize.INTEGER,
          },
          ID_LOC: {
           type: Sequelize.INTEGER,
