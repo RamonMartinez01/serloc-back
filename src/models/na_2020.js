@@ -1,169 +1,161 @@
-'use strict';
-const { Model } = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
-    class Loc_rur_2010 extends Model {
+    class Na_2020 extends Model {
         static associate(models) {
-            // Asociaciones
+            // Asociaciones 
 
-            //Asociación con Localidades
-            Loc_rur_2010.belongsTo(models.Localidades, {
-                foreignKey: 'ID_LOC',
-                targetKey: 'ID_LOC'
-            });
         }
     }
 
-    Loc_rur_2010.init({
+    Na_2020.init({
         ID: {
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-        CGLOC: {
+        CVE_NUCLEO: {
             type: DataTypes.STRING,
         },
-        VUL_0201: {
+        VUL_0101: {
             type: DataTypes.DOUBLE,
         },
-        VUL_0202: {
+        VUL_0102: {
             type: DataTypes.STRING,
         },
-        FCB_0201: {
+        FCB_0101: {
             type: DataTypes.DOUBLE,
         },
-        FCB_0202: {
+        FCB_0102: {
             type: DataTypes.STRING,
         },
-        FCB_0203: {
+        FCB_0103: {
             type: DataTypes.DOUBLE,
         },
-        FCB_0204: {
+        FCB_0104: {
             type: DataTypes.DOUBLE,
         },
-        FCB_0205: {
+        FCB_0105: {
             type: DataTypes.DOUBLE,
         },
-        FCB_0206: {
+        FCB_0106: {
             type: DataTypes.DOUBLE,
         },
-        FCB_0207: {
+        FCB_0107: {
             type: DataTypes.DOUBLE,
         },
-        FPI_0201: {
+        FPI_0101: {
             type: DataTypes.DOUBLE,
         },
-        FPI_0202: {
+        FPI_0102: {
             type: DataTypes.STRING,
         },
-        FPI_0203: {
+        FPI_0103: {
             type: DataTypes.DOUBLE,
         },
-        FPI_0204: {
+        FPI_0104: {
             type: DataTypes.DOUBLE,
         },
-        FPI_0205: {
+        FPI_0105: {
             type: DataTypes.DOUBLE,
         },
-        FRE_0201: {
+        FRE_0101: {
             type: DataTypes.DOUBLE,
         },
-        FRE_0202: {
+        FRE_0102: {
             type: DataTypes.STRING,
         },
-        FRE_0203: {
+        FRE_0103: {
             type: DataTypes.DOUBLE,
         },
-        FRE_0204: {
+        FRE_0104: {
             type: DataTypes.DOUBLE,
         },
-        FRE_0205: {
+        FRE_0105: {
             type: DataTypes.DOUBLE,
         },
-        FRE_0206: {
+        FRE_0106: {
             type: DataTypes.DOUBLE,
         },
-        FPT_0201: {
+        FPT_0101: {
             type: DataTypes.DOUBLE,
         },
-        FPT_0202: {
+        FPT_0102: {
             type: DataTypes.STRING,
         },
-        FPT_0203: {
+        FPT_0103: {
             type: DataTypes.DOUBLE,
         },
-        FPT_0204: {
+        FPT_0104: {
             type: DataTypes.DOUBLE,
         },
-        FPT_0205: {
+        FPT_0105: {
             type: DataTypes.DOUBLE,
         },
-        FPT_0206: {
+        FPT_0106: {
             type: DataTypes.DOUBLE,
         },
-        FPP_0201: {
+        FPP_0101: {
             type: DataTypes.DOUBLE,
         },
-        FPP_0202: {
+        FPP_0102: {
             type: DataTypes.STRING,
         },
-        FPP_0203: {
+        FPP_0103: {
             type: DataTypes.DOUBLE,
         },
-        FPP_0204: {
+        FPP_0104: {
             type: DataTypes.DOUBLE,
         },
-        FPP_0205: {
+        FPP_0105: {
             type: DataTypes.DOUBLE,
         },
-        FAN_0201: {
+        FAN_0101: {
             type: DataTypes.DOUBLE,
         },
-        FAN_0202: {
+        FAN_0102: {
             type: DataTypes.STRING,
         },
-        FAN_0203: {
+        FAN_0103: {
             type: DataTypes.DOUBLE,
         },
-        FAN_0204: {
+        FAN_0104: {
             type: DataTypes.DOUBLE,
         },
-        FAD_0201: {
+        FAD_0101: {
             type: DataTypes.DOUBLE,
         },
-        FAD_0202: {
+        FAD_0102: {
             type: DataTypes.STRING,
         },
-        FAD_0203: {
+        FAD_0103: {
             type: DataTypes.DOUBLE,
         },
-        FAD_0204: {
+        FAD_0104: {
             type: DataTypes.DOUBLE,
         },
-        FPE_0201: {
+        FPE_0101: {
             type: DataTypes.DOUBLE,
         },
-        FPE_0202: {
+        FPE_0102: {
             type: DataTypes.STRING,
         },
-        FPE_0203: {
+        FPE_0103: {
             type: DataTypes.DOUBLE,
         },
-        FPE_0204: {
+        FPE_0104: {
             type: DataTypes.DOUBLE,
         },
-        POBTOT: {
-            type: DataTypes.INTEGER,
-        },
-        ID_LOC: {
+        ID_NA: {
             type: DataTypes.INTEGER,
         },
     }, {
         sequelize,
-        modelName: 'Loc_rur_2010',
+        modelName: 'Na_2020',
         schema: 'ivp',
-        tableName: 'loc_rur_2010',
+        tableName: 'na_2020',
         timestamps: false,
     });
 
-    return Loc_rur_2010;
-};
+    return Na_2020;
+}

@@ -1,25 +1,22 @@
-'use strict';
-const { Model } = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
-    class Loc_rur_2010 extends Model {
+    class na_2010 extends Model {
         static associate(models) {
-            // Asociaciones
+            // Asociaciones 
 
-            //Asociación con Localidades
-            Loc_rur_2010.belongsTo(models.Localidades, {
-                foreignKey: 'ID_LOC',
-                targetKey: 'ID_LOC'
-            });
+            //Asociación con Municipios
+
         }
     }
 
-    Loc_rur_2010.init({
+    na_2010.init({
         ID: {
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-        CGLOC: {
+        CVE_NUCLEO: {
             type: DataTypes.STRING,
         },
         VUL_0201: {
@@ -151,19 +148,16 @@ module.exports = (sequelize, DataTypes) => {
         FPE_0204: {
             type: DataTypes.DOUBLE,
         },
-        POBTOT: {
-            type: DataTypes.INTEGER,
-        },
-        ID_LOC: {
+        ID_NA: {
             type: DataTypes.INTEGER,
         },
     }, {
         sequelize,
-        modelName: 'Loc_rur_2010',
+        modelName: 'Na_2010',
         schema: 'ivp',
-        tableName: 'loc_rur_2010',
-        timestamps: false,
+        tableName: 'na_2010',
+        timestamps: true,
     });
 
-    return Loc_rur_2010;
-};
+    return na_2010;
+}

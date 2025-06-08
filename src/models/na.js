@@ -2,7 +2,7 @@
 const { Model } = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
-    class na extends Model {
+    class Na extends Model {
         static associate(models) {
             // Asociaciones 
 
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
 
-    na.init({
+    Na.init({
         ID_NA: {
             type: DataTypes.INTEGER,
             primaryKey: true
@@ -51,8 +51,8 @@ module.exports = (sequelize, DataTypes) => {
         modelName: 'Na',
         schema: 'public',
         tableName: 'na',
-        timestamps: true,
+        timestamps: false,
     });
 
-    return na;
+    return Na;
 }

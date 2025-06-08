@@ -2,19 +2,19 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-    class loc_rur_mpio_2010 extends Model {
+    class Loc_rur_mpio_2010 extends Model {
         static associate(models) {
             // Asociaciones
 
             //Asociación con Localidades
-            loc_rur_mpio_2010.belongsTo(models.Municipios, {
+            Loc_rur_mpio_2010.belongsTo(models.Municipios, {
                 foreignKey: 'ID_MUN',
                 targetKey: 'ID_MUN'
             });
         }
     }
 
-    loc_rur_mpio_2010.init({
+    Loc_rur_mpio_2010.init({
         ID_MUN_2010: {
             type: DataTypes.INTEGER,
             primaryKey: true
@@ -162,5 +162,5 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
     });
 
-    return loc_rur_mpio_2010;
+    return Loc_rur_mpio_2010;
 }

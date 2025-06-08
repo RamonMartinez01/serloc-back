@@ -2,19 +2,19 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-    class loc_rur_2020 extends Model {
+    class Loc_rur_2020 extends Model {
         static associate(models) {
             // Asociaciones
 
             //Asociación con Localidades
-            loc_rur_2020.belongsTo(models.Localidades, {
+            Loc_rur_2020.belongsTo(models.Localidades, {
                 foreignKey: 'ID_LOC',
                 targetKey: 'ID_LOC'
             });
         }
     }
 
-    loc_rur_2020.init({
+    Loc_rur_2020.init({
         ID: {
             type: DataTypes.INTEGER,
             primaryKey: true
@@ -165,5 +165,5 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
     });
 
-    return loc_rur_2020;
+    return Loc_rur_2020;
 };
