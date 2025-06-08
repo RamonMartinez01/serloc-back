@@ -10,7 +10,7 @@ module.exports = {
       },
       {
         id: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
           primaryKey: true,
         },
         CGLOC:{
