@@ -1,42 +1,43 @@
 'use strict';
 
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../utils/connection');
+const { Model } = require('sequelize');
 
-class Localidades extends Model {
-    static associate(models) {
+module.exports = (sequelize, DataTypes) => {
+    class Localidades extends Model {
 
-        // aquí se definirán las asociasiones
+        static associate(models) {
 
-        //Asociación con Municipios
-        Localidades.belongsTo(models.Municipios, {
-            foreignKey: 'ID_MUN',
-            targetKey: 'ID_MUN',
-          });
+            // aquí se definirán las asociasiones
 
-        //Asociación con Des_local_2020
-        Localidades.hasMany(models.Des_local_2020, {
-            foreignKey: 'ID_LOC',
-            sourceKey: 'ID_LOC',
-        });
+            //Asociación con Municipios
+            Localidades.belongsTo(models.Municipios, {
+                foreignKey: 'ID_MUN',
+                targetKey: 'ID_MUN',
+            });
 
-        //Asociación con Loc_rur_2010
-        Localidades.hasMany(models.Loc_rur_2010, {
-            foreignKey: 'ID_LOC',
-            sourceKey: 'ID_LOC',
-        });
+            //Asociación con Des_local_2020
+            Localidades.hasMany(models.Des_local_2020, {
+                foreignKey: 'ID_LOC',
+                sourceKey: 'ID_LOC',
+            });
 
-         //Asociación con Loc_rur_2020
-         Localidades.hasMany(models.Loc_rur_2020, {
-            foreignKey: 'ID_LOC',
-            sourceKey: 'ID_LOC',
-        })
+            //Asociación con Loc_rur_2010
+            Localidades.hasMany(models.Loc_rur_2010, {
+                foreignKey: 'ID_LOC',
+                sourceKey: 'ID_LOC',
+            });
 
+            //Asociación con Loc_rur_2020
+            Localidades.hasMany(models.Loc_rur_2020, {
+                foreignKey: 'ID_LOC',
+                sourceKey: 'ID_LOC',
+            })
+
+        }
     }
-}
 
-Localidades.init(
-    {
+
+    Localidades.init({
         CVE_LOC: {
             type: DataTypes.STRING(80),
         },
@@ -60,12 +61,13 @@ Localidades.init(
             type: DataTypes.STRING,
         },
     },
-    {
-        sequelize,
-        modelName: 'Localidades',
-        tableName: 'localidades',
-        schema: 'loc',
-        timestamps: false,
+        {
+            sequelize,
+            modelName: 'Localidades',
+            tableName: 'localidades',
+            schema: 'loc',
+            timestamps: false,
 
-    }
-)
+        });
+    return Localidades;
+};
