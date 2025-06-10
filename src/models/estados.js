@@ -7,9 +7,9 @@ module.exports = (sequelize, DataTypes) => {
       // Asociaciones se definen aquí 
 
       // models.Estados.hasMany(models.Municipios, { foreignKey: 'ID_ENT' });
-      models.Estados.hasMany(models.Municipios, {
-        foreignkey: 'ID_ENT',
-        sourcekey: 'ID_ENT'
+      Estados.hasMany(models.Municipios, {
+        foreignKey: 'ID_ENT',
+        sourceKey: 'ID_ENT'
       });
     }
   }

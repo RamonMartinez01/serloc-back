@@ -10,7 +10,31 @@ module.exports = (sequelize, DataTypes) => {
                 foreignKey: 'ID_ENT',
                 targetKey: 'ID_ENT',
             });
+
+            //Asociación cons localidades
+            Municipios.hasMany(models.Localidades, {
+                foreignKey: 'ID_MUN',
+                sourceKey: 'ID_MUN'
+              });
             
+            //Asociación cons loc_rur_mpio_2010
+            Municipios.hasMany(models.Loc_rur_mpio_2010, {
+              foreignKey: 'ID_MUN',
+              sourceKey: 'ID_MUN'
+            });
+
+            //Asociación cons loc_rur_mpio_2020
+            Municipios.hasMany(models.Loc_rur_mpio_2020, {
+              foreignKey: 'ID_MUN',
+              sourceKey: 'ID_MUN'
+            });
+
+             //Asociación cons Na
+             Municipios.hasMany(models.Na, {
+              foreignKey: 'ID_MUN',
+              sourceKey: 'ID_MUN'
+            });
+
             // Aquí pueden agregarse más asociaciones 
         }
     }
