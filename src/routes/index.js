@@ -11,6 +11,7 @@ const municipiosRouter = require('./municipios.router');
 const na2010Router = require('./na_2010.router');
 const naRouter = require('./na.router');
 const na2020Router = require('./na_2020.router');
+const subtemaRouter = require('./subtema.controllers');
 const router = express.Router();
 
 // colocar las rutas aquí
@@ -26,5 +27,6 @@ router.use(municipiosRouter)
 router.use(na2010Router)
 router.use(na2020Router)
 router.use(naRouter)
+router.use(subtemaRouter)
 
 module.exports = router;
