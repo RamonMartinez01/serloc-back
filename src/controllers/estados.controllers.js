@@ -10,12 +10,12 @@ const getAllEstadosWithoutGeom = catchError(async (req, res) => {
             {
                 model: Municipios,
                 
-                include: [
+               /* include: [
                     {
                         model: Localidades,
                         
                     }
-                ]
+                ]*/
             }
         ]
     });
