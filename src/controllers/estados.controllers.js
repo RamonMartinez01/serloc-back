@@ -1,51 +1,42 @@
 const catchError = require('../utils/catchError');
-const { Estados, Municipios, Localidades } = require('../models');
+const { Estados, Municipios } = require('../models');
 
 
 
 const getAllEstadosWithoutGeom = catchError(async (req, res) => {
     const estados = await Estados.findAll({
-       
         include: [
             {
                 model: Municipios,
-                
-                include: [
-                    {
-                        model: Localidades,
-                        
-                    }
-                ]
             }
         ]
     });
-    return res.json(estados);  // Return the fetched data with municipios included but without GEOM
+
+    if (!estados || estados.length === 0){
+        return res.status(404).json({
+            error: true,
+            message: 'No se encontraron datos de Estados'
+        })
+    }
+    return res.status(200).json(estados);  // Return the fetched data with municipios included but without GEOM
 });
 
 const getOne = catchError(async (req, res) => {
     const { nomgeo } = req.params;  // Access the NOMGEO value from the route parameter
     const estado = await Estados.findOne({ 
         where: { NOMGEO: nomgeo },  // Find the estado with the matching NOMGEO
-        
-       /* include: [
+        include: [
             {
-                model: Municipios,
-               
-              /*  include: [
-                    {
-                        model: Localidades,
-                        
-                    }
-                ]
+                model: Municipios,             
             }
-        ]*/
+        ]
     });
 
     if (!estado) {
         return res.status(404).json({ message: "Estado no encontrado" });  // Return 404 if not found
     }
 
-    return res.json(estado);  // Return the found estado
+    return res.status(200).json(estado);  // Return the found estado
 });
 
 
@@ -68,11 +59,13 @@ const getEstadoAndMunicipio = catchError(async (req, res) => {
     });
 
     
-    if (!estado) {
-        return res.status(404).json({ message: "Algo salió mal con la búsqueda" });  
+    if (!estado || estado.lenght === 0) {
+        return res.status(404).json({
+            error: true,
+            message: "No se encontraron datos de este Estado" });  
     }
 
-    return res.json(estado);  
+    return res.status(200).json(estado);  
 });
 
 module.exports = {
