@@ -11,16 +11,21 @@ const getLocalidades = catchError(async (req, res) => {
         });
     }
 
-    return res.json(localidades);  
+    return res.status(200).json(localidades);  
 });
 
 const getOne = catchError(async (req, res) => {
     const { id } = req.params;
     const localidad = await Localidades.findOne({
-        where: { NOM_LOC: id }
+        where: { ID_LOC: id }
     });
-    if (!localidad) return res.status(404).json({ message: "Localidad no encontrado" });
-    return res.json(localidad);
+    if (!localidad || localidad.length === 0) {
+        return res.status(404).json({ 
+            error: true,
+            message: "Localidad no encontrada" });
+        }
+        
+    return res.status(200).json(localidad);
 });
 
 module.exports = {
