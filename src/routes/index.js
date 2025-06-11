@@ -8,6 +8,7 @@ const locRurMpio2010Router = require('./loc_rur_mpio_2010.router');
 const locRurMpio2020Router = require('./loc_rur_mpio_2020.router');
 const localidadesRouter = require('./localidades.router');
 const municipiosRouter = require('./municipios.router');
+const na2010Router = require('./na_2010.router');
 const router = express.Router();
 
 // colocar las rutas aquí
@@ -20,5 +21,6 @@ router.use(locRurMpio2010Router)
 router.use(locRurMpio2020Router)
 router.use(localidadesRouter)
 router.use(municipiosRouter)
+router.use(na2010Router)
 
 module.exports = router;
