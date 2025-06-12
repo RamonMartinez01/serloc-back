@@ -20,7 +20,7 @@ const getSingleNa = catchError(async (req, res) => {
         where: { ID: id}
     })
 
-    if (!singleNa || singleNa.length === 0) {
+    if (!singleNa) {
         return res.status(404).json({
             error: true,
             message: 'No se encontraron datos de Na_2020'

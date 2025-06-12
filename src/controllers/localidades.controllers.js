@@ -19,7 +19,7 @@ const getOne = catchError(async (req, res) => {
     const localidad = await Localidades.findOne({
         where: { ID_LOC: id }
     });
-    if (!localidad || localidad.length === 0) {
+    if (!localidad) {
         return res.status(404).json({ 
             error: true,
             message: "Localidad no encontrada" });
