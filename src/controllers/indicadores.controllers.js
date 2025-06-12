@@ -1,10 +1,16 @@
 const catchError = require('../utils/catchError');
-const Indicadores = require('../models');
+const { Indicadores } = require('../models');
 
 const getAll = catchError(async (req, res) => {
-    const indicadores = await Indicadores.findAll({
-        
-    });
+    const indicadores = await Indicadores.findAll();
+
+    if (!indicadores || indicadores.length === 0) {
+        return res.status(404).json({ 
+            error: true,
+            message: 'No se encontraron datos de indicadores.' 
+        });
+    }
+    
     return res.json(indicadores);  
 });
 
