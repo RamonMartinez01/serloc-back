@@ -7,6 +7,6 @@ desLocal2020Router.route('/des-local-2020')
     .get(getAll)
 
 desLocal2020Router.route('/des-local-2020/:id')
-    get(getOne)
+    .get(getOne)
 
 module.exports = desLocal2020Router

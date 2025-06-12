@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Localidades = require('../models');
+const { Localidades } = require('../models');
 
 const getLocalidades = catchError(async (req, res) => {
     const localidades = await Localidades.findAll();

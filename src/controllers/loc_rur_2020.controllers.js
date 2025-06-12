@@ -1,4 +1,4 @@
-const Loc_rur_2020 = require('../models');
+const { Loc_rur_2020 } = require('../models');
 const catchError = require('../utils/catchError');
 
 const getAll = catchError(async (req, res) => {

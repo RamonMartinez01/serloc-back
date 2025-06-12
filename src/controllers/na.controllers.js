@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Na = require('../models');
+const { Na } = require('../models');
 
 const getAllNa = catchError(async (req, res) => {
     const na = await Na.findAll()

@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Loc_rur_2010 = require('../models');
+const { Loc_rur_2010 } = require('../models');
 
 const getAll = catchError(async (req, res) => {
     const locRur = await Loc_rur_2010.findAll()
