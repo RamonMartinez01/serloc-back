@@ -5,11 +5,11 @@ const { Estados, Municipios } = require('../models');
 
 const getAllEstadosWithoutGeom = catchError(async (req, res) => {
     const estados = await Estados.findAll({
-        include: [
+       /* include: [
             {
                 model: Municipios,
             }
-        ]
+        ]*/
     });
 
     if (!estados || estados.length === 0){

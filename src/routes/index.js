@@ -11,7 +11,7 @@ const municipiosRouter = require('./municipios.router');
 const na2010Router = require('./na_2010.router');
 const naRouter = require('./na.router');
 const na2020Router = require('./na_2020.router');
-const subtemaRouter = require('./subtema.controllers');
+const subtemaRouter = require('./subtema.router');
 const temaRouter = require('./tema.router');
 const router = express.Router();
 
