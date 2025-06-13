@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Localidades = require('../models');
+const { Localidades } = require('../models');
 
 const getLocalidades = catchError(async (req, res) => {
     const localidades = await Localidades.findAll();
@@ -19,7 +19,7 @@ const getOne = catchError(async (req, res) => {
     const localidad = await Localidades.findOne({
         where: { ID_LOC: id }
     });
-    if (!localidad || localidad.length === 0) {
+    if (!localidad) {
         return res.status(404).json({ 
             error: true,
             message: "Localidad no encontrada" });

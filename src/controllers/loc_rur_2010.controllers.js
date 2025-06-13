@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Loc_rur_2010 = require('../models');
+const { Loc_rur_2010 } = require('../models');
 
 const getAll = catchError(async (req, res) => {
     const locRur = await Loc_rur_2010.findAll()
@@ -12,8 +12,23 @@ const getAll = catchError(async (req, res) => {
     }
 
     return res.status(200).json(locRur);
-})
+});
+
+const getOne = catchError(async (req, res) => {
+    const { id } = req.params;
+    const locRur = await Loc_rur_2010.findOne({
+        where: { ID: id }
+    });
+    if (!locRur) {
+        return res.status(404).json({
+            message: "loc_Rur no encontrado" 
+        });
+    }
+
+    return res.status(200).json(locRur); 
+});
 
 module.exports = {
-    getAll
+    getAll,
+    getOne
 }

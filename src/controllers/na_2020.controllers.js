@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Na_2020 = require('../models');
+const { Na_2020 } = require('../models');
 
 const getAllNa = catchError(async (req, res) => {
     const na = await Na_2020.findAll()
@@ -20,7 +20,7 @@ const getSingleNa = catchError(async (req, res) => {
         where: { ID: id}
     })
 
-    if (!singleNa || singleNa.length === 0) {
+    if (!singleNa) {
         return res.status(404).json({
             error: true,
             message: 'No se encontraron datos de Na_2020'

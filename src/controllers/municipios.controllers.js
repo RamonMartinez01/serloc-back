@@ -38,11 +38,16 @@ const getOne = catchError(async (req, res) => {
                 attributes: ['NOMGEO']  // Solo incluye NOMGEO (nombre del Estado)
             }
         ]
-    });
-    if (!municipio || municipio.length === 0) {
-        return res.status(404).json({ message: "Municipio no encontrado" });
+    })
+
+    if (!municipio) {
+        return res.status(404).json({
+            error: true,
+            message: "Municipio no encontrado"
+        });
     }
-    return res.json(municipio);
+
+    return res.status(200).json(municipio);
 });
 
 module.exports = {

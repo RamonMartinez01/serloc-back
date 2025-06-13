@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Tema = require('../models');
+const { Tema } = require('../models');
 
 const getAll = catchError(async (req, res) => {
     const temas = await Tema.findAll()
@@ -19,7 +19,7 @@ const getOne = catchError(async (req, res) => {
     const tema = await Tema.findOne({
         where: { id }
     });
-    if (!tema || tema.length === 0) {
+    if (!tema) {
         return res.status(404).json({ 
             error: true,
             message: "Tema no encontrado" })};
