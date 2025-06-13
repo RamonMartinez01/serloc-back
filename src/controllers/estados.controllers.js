@@ -1,5 +1,6 @@
 const catchError = require('../utils/catchError');
 const { Estados, Municipios } = require('../models');
+const { where } = require('sequelize');
 
 
 
@@ -68,8 +69,35 @@ const getEstadoAndMunicipio = catchError(async (req, res) => {
     return res.status(200).json(estado);  
 });
 
+
+// Para obtener solo los municipios correspondientes a un estado, buscando por CVE_ENT
+// No incliye datos del estado, SOLO MUNICIPIOS
+const getMunicipiosPorClaveEntidad = catchError(async (req, res) => {
+    const { cve_ent } = req.params; // el valor dinámico en la búsqueda
+
+    const municipios = await Municipios.findAll({
+        include: [
+            {
+                model: Estados,
+                where: { CVE_ENT: cve_ent },
+                attributes: [] // no incluye datos del estado en la respuesta
+            }
+        ]
+    });
+
+    if (!municipios || municipios.lenght === 0) {
+        return res.status(404).json({
+            error: true,
+            message: `No se encontraron municipios para el estado con CVE_ENT = ${cve_ent}`
+        })
+    }
+
+    return res.status(200).json(municipios)
+})
+
 module.exports = {
     getAllEstadosWithoutGeom,
     getOne,
-    getEstadoAndMunicipio
+    getEstadoAndMunicipio,
+    getMunicipiosPorClaveEntidad
 };
