@@ -15,6 +15,10 @@ module.exports = {
           allowNull: false,
         },
         CVEGEO: {
+          type: Sequelize.STRING(5),
+          allowNull: true,
+        },
+        CVE_MUN: {
           type: Sequelize.STRING(3),
           allowNull: true,
         },
