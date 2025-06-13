@@ -5,7 +5,27 @@ const getMunicipios = catchError(async (req, res) => {
     const municipios = await Municipios.findAll({
         include: [
             {
-                model: Localidades, // Incluye modelo Localidades
+                model: Estados, // Incluye Estados
+                attributes: ['NOMGEO']  // Solo incluye NOMGEO (nombre del Estado)
+            }
+        ]
+    });
+
+    if (!municipios || municipios.length === 0) {
+        return res.status(404).json({
+            error: true,
+            message: 'No se encontraron datos de municipios.'
+        });
+    }
+
+    return res.status(200).json(municipios);
+});
+
+const getMunicipiosConLocalidades = catchError(async (req, res) => {
+    const municipios = await Municipios.findAll({
+        include: [
+            {
+                model: Localidades,
             },
             {
                 model: Estados, // Incluye Estados
@@ -17,7 +37,7 @@ const getMunicipios = catchError(async (req, res) => {
     if (!municipios || municipios.length === 0) {
         return res.status(404).json({
             error: true,
-            message: 'No se encontraron datos de municipios.'
+            message: 'No se encontraron datos de municipios con localidades.'
         });
     }
 
@@ -52,5 +72,6 @@ const getOne = catchError(async (req, res) => {
 
 module.exports = {
     getMunicipios,
-    getOne
+    getOne,
+    getMunicipiosConLocalidades
 };

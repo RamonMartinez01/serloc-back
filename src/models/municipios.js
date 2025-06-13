@@ -46,7 +46,11 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
         },
         CVEGEO: {
-          type: DataTypes.STRING(3),
+          type: DataTypes.STRING(5),
+          allowNull: true,
+        },
+        CVE_MUN: {
+          type: DataTypes.STRING(5),
           allowNull: true,
         },
         NOMGEO: {
