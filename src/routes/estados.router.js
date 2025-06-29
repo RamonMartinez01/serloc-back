@@ -11,7 +11,7 @@ estadosRouter.route("/estados/:cve_ent/municipios")
     .get(getMunicipiosPorClaveEntidad)
 
 // Encuentra UN municipio con la clave CVE_MUN, perteneciente a un estado de clave CVE_ENT
-// Ejemplo de uso >> /estados/07/municipios/95
+// Ejemplo de uso >> /estados/07/municipios/099
 estadosRouter.route("/estados/:cve_ent/municipios/:cve_mun")
     .get(getMunicipioPorCleveMun)
 
